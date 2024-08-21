@@ -33,10 +33,22 @@ public class CustomerController {
         return "Added purchases without cache invalidation";
     }
 
-    @PostMapping("/{customerId}/add-invalidate")
+    @PostMapping("/{customerId}/add-and-invalidate")
     public String addPurchasesWithCacheInvalidation(@PathVariable Long customerId, @RequestParam int purchases) {
         customerService.addPurchasesWithCacheInvalidation(customerId, purchases);
         return "Added purchases and invalidated cache";
+    }
+
+    @PostMapping("/{customerId}/add-purchases-with-condition")
+    public String addPurchasesWithConditionalCacheInvalidation(@PathVariable Long customerId, @RequestParam int purchases) {
+        customerService.addPurchasesWithConditionalCacheInvalidation(customerId, purchases);
+        return "Added purchases with conditional cache invalidation";
+    }
+
+    @PostMapping("/{customerId}/add-purchases-with-manual-eviction-condition")
+    public String addPurchasesWithConditionalManualCacheInvalidation(@PathVariable Long customerId, @RequestParam int purchases) {
+        customerService.addPurchasesWithConditionalEviction(customerId, purchases);
+        return "Added purchases with conditional manual cache invalidation";
     }
 
 }

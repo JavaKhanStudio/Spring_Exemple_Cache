@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "daf00c12-4b94-4f18-bd05-cf7bcb2473b7",
+		"name": "Spring Cache Exemple",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7216865"
+	},
+	"item": [
+		{
+			"name": "Get Top 5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/top-customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"top-customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FORCE Refresh-cache",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/refresh-cache",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"refresh-cache"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change and refresh",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/1/add-invalidate?purchases=10000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"1",
+						"add-invalidate"
+					],
+					"query": [
+						{
+							"key": "purchases",
+							"value": "10000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change and DONT refresh",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/3/add?purchases=10000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"3",
+						"add"
+					],
+					"query": [
+						{
+							"key": "purchases",
+							"value": "10000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change and refresh on condition (False)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/1/add-purchases-with-condition?purchases=1000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"1",
+						"add-purchases-with-condition"
+					],
+					"query": [
+						{
+							"key": "purchases",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change and refresh on condition (True)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/1/add-purchases-with-condition?purchases=1001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"1",
+						"add-purchases-with-condition"
+					],
+					"query": [
+						{
+							"key": "purchases",
+							"value": "1001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change and refresh on Manual condition (True)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/2/add-purchases-with-manual-eviction-condition?purchases=1003",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"2",
+						"add-purchases-with-manual-eviction-condition"
+					],
+					"query": [
+						{
+							"key": "purchases",
+							"value": "1003"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change and refresh on Manual condition (False)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/2/add-purchases-with-manual-eviction-condition?purchases=1002",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"2",
+						"add-purchases-with-manual-eviction-condition"
+					],
+					"query": [
+						{
+							"key": "purchases",
+							"value": "1002"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
