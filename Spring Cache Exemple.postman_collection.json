@@ -50,7 +50,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/1/add-invalidate?purchases=10000",
+					"raw": "http://localhost:8080/1/add-and-invalidate?purchases=10000",
 					"protocol": "http",
 					"host": [
 						"localhost"
